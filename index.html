@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LegalGuide AI – Plain-language legal help</title>
+  <meta name="description" content="Understand your legal position in plain language. LegalGuide AI explains Indian law, your rights and your next steps." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="scrim" id="scrim" hidden></div>
+
+    <aside class="sidebar" id="sidebar" aria-label="Chat history">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 4v22M7 26h18M16 8 6 9m10-1 10 1M6 9l-4 9a4 4 0 0 0 8 0L6 9Zm20 0-4 9a4 4 0 0 0 8 0l-4-9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">LegalGuide AI</span>
+      </div>
+
+      <button class="btn-new" id="newChat" type="button">New conversation</button>
+
+      <nav class="chat-list" id="chatList" aria-label="Previous conversations"></nav>
+
+      <p class="side-note">General legal information, not advice from a licensed advocate.</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-controls="sidebar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <h1 class="chat-title" id="chatTitle">New conversation</h1>
+      </header>
+
+      <section class="stream" id="stream" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <h2>Understand your legal position before you act.</h2>
+          <p>Describe your situation in your own words. LegalGuide AI explains the law that applies, what you can do next, and when it is time to see an advocate.</p>
+
+          <div class="topics" role="list">
+            <button class="topic" role="listitem" type="button" data-q="My landlord is not returning my security deposit after I vacated the flat. What can I do?">
+              <strong>Tenancy and rent</strong>
+              <span>Deposits, eviction notices, rent agreements</span>
+            </button>
+            <button class="topic" role="listitem" type="button" data-q="I bought a defective product online and the seller refuses a refund. How do I file a consumer complaint?">
+              <strong>Consumer complaints</strong>
+              <span>Refunds, defective goods, poor service</span>
+            </button>
+            <button class="topic" role="listitem" type="button" data-q="My employer has not paid my last two months of salary and has terminated me. What are my rights?">
+              <strong>Employment</strong>
+              <span>Unpaid salary, termination, notice period</span>
+            </button>
+            <button class="topic" role="listitem" type="button" data-q="How do I file an FIR, and what can I do if the police refuse to register it?">
+              <strong>Police and FIR</strong>
+              <span>Filing an FIR, arrest rights, bail basics</span>
+            </button>
+            <button class="topic" role="listitem" type="button" data-q="What should I check in a property sale agreement before paying the token amount?">
+              <strong>Property and contracts</strong>
+              <span>Sale deeds, agreements, title checks</span>
+            </button>
+            <button class="topic" role="listitem" type="button" data-q="What is the process for getting a mutual-consent divorce in India?">
+              <strong>Family matters</strong>
+              <span>Divorce, maintenance, custody, inheritance</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <div class="composer-box">
+          <label class="sr-only" for="input">Describe your legal question</label>
+          <textarea id="input" rows="1" maxlength="2000" placeholder="Describe your situation. Include dates, amounts and what the other party has said."></textarea>
+          <button class="send" id="send" type="submit" aria-label="Send message" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6m0 0-5 5m5-5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p class="disclaimer">LegalGuide AI can make mistakes and does not replace a licensed advocate. Do not share Aadhaar, PAN or bank details.</p>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
